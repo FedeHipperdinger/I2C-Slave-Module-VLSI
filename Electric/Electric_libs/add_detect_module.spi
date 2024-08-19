@@ -1,0 +1,241 @@
+*** SPICE deck for cell add_detect_module{sch} from library ADCD_Hipperdinger
+*** Created on lun jul. 01, 2024 11:30:01
+*** Last revised on dom jul. 07, 2024 17:37:11
+*** Written on dom jul. 07, 2024 17:37:34 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NAND FROM CELL NAND{sch}
+.SUBCKT ADCD_Hipperdinger__NAND gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vb net@0 net@0 NMOS L=0.6U W=1.8U
+Mnmos-4@1 net@0 Va gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vb Vout vdd PMOS L=0.6U W=3U
+Mpmos-4@1 vdd Va Vout pmos-4@1_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NAND{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NAND
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NOR FROM CELL NOR{sch}
+.SUBCKT ADCD_Hipperdinger__NOR gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@1 Vout Va gnd gnd NMOS L=0.6U W=1.8U
+Mnmos-4@2 Vout Vb gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Va net@62 vdd PMOS L=0.6U W=3U
+Mpmos-4@2 net@62 Vb Vout pmos-4@2_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NOR{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NOR
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+*** SUBCIRCUIT ADCD_Hipperdinger__6b_AND FROM CELL 6b_AND{sch}
+.SUBCKT ADCD_Hipperdinger__6b_AND a0 a1 a2 b0 b1 b2 gnd vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND@0 gnd a0 b0 vdd net@26 ADCD_Hipperdinger__NAND
+XNAND@1 gnd a1 b1 vdd net@28 ADCD_Hipperdinger__NAND
+XNAND@2 gnd a2 b2 vdd net@38 ADCD_Hipperdinger__NAND
+XNAND@3 gnd net@30 net@32 vdd net@34 ADCD_Hipperdinger__NAND
+XNOR@0 gnd net@34 net@38 vdd Vout ADCD_Hipperdinger__NOR
+Xinv@0 gnd vdd net@26 net@30 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@28 net@32 ADCD_Hipperdinger__inv
+.ENDS ADCD_Hipperdinger__6b_AND
+
+*** SUBCIRCUIT ADCD_Hipperdinger__AND FROM CELL AND{sch}
+.SUBCKT ADCD_Hipperdinger__AND Va Vb Vout
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND@0 gnd Va Vb vdd net@0 ADCD_Hipperdinger__NAND
+Xinv@0 gnd vdd net@0 Vout ADCD_Hipperdinger__inv
+.ENDS ADCD_Hipperdinger__AND
+
+*** SUBCIRCUIT ADCD_Hipperdinger__XOR FROM CELL XOR{sch}
+.SUBCKT ADCD_Hipperdinger__XOR gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND@0 gnd net@8 net@5 vdd Vout ADCD_Hipperdinger__NAND
+XNAND@1 gnd Va net@0 vdd net@8 ADCD_Hipperdinger__NAND
+XNAND@2 gnd net@0 Vb vdd net@5 ADCD_Hipperdinger__NAND
+XNAND@3 gnd Va Vb vdd net@0 ADCD_Hipperdinger__NAND
+
+* Spice Code nodes in cell cell 'XOR{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__XOR
+
+*** SUBCIRCUIT ADCD_Hipperdinger__14b_EQUAL FROM CELL 14b_EQUAL{sch}
+.SUBCKT ADCD_Hipperdinger__14b_EQUAL a0 a1 a2 a3 a4 a5 a6 b0 b1 b2 b3 b4 b5 b6 gnd vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+X_6b_AND@0 net@163 net@165 net@167 vdd vdd vdd gnd vdd net@182 ADCD_Hipperdinger__6b_AND
+XAND@0 net@182 net@178 Vout ADCD_Hipperdinger__AND
+XNOR@0 gnd net@151 net@153 vdd net@163 ADCD_Hipperdinger__NOR
+XNOR@1 gnd net@155 net@157 vdd net@165 ADCD_Hipperdinger__NOR
+XNOR@2 gnd net@159 net@161 vdd net@167 ADCD_Hipperdinger__NOR
+XXOR@0 gnd a0 b0 vdd net@151 ADCD_Hipperdinger__XOR
+XXOR@1 gnd a1 b1 vdd net@153 ADCD_Hipperdinger__XOR
+XXOR@2 gnd a2 b2 vdd net@155 ADCD_Hipperdinger__XOR
+XXOR@3 gnd a3 b3 vdd net@157 ADCD_Hipperdinger__XOR
+XXOR@4 gnd a4 b4 vdd net@159 ADCD_Hipperdinger__XOR
+XXOR@5 gnd a5 b5 vdd net@161 ADCD_Hipperdinger__XOR
+XXOR@6 gnd a6 b6 vdd net@184 ADCD_Hipperdinger__XOR
+Xinv@0 gnd vdd net@184 net@178 ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell '14b_EQUAL{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va0  a0 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Va1  a1 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 350MS
+#Va2  a2 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Va3  a3 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Va4  a4 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Va5  a5 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Va6  a6 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 350MS
+#Vb0  b0 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 350MS
+#Vb1  b1 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Vb2  b2 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Vb3  b3 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Vb4  b4 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Vb5  b5 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#Vb6  b6 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+#.TRAN 1MS 1200MS
+.ENDS ADCD_Hipperdinger__14b_EQUAL
+
+*** SUBCIRCUIT ADCD_Hipperdinger__CLK_noSolp FROM CELL CLK_noSolp{sch}
+.SUBCKT ADCD_Hipperdinger__CLK_noSolp C1 C2 gnd vdd Vin
+** GLOBAL gnd
+** GLOBAL vdd
+XNOR@0 gnd net@5 C2 vdd net@17 ADCD_Hipperdinger__NOR
+XNOR@1 gnd C1 net@7 vdd net@15 ADCD_Hipperdinger__NOR
+Xinv@0 gnd vdd Vin net@2 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@2 net@5 ADCD_Hipperdinger__inv
+Xinv@2 gnd vdd Vin net@7 ADCD_Hipperdinger__inv
+Xinv@3 gnd vdd net@17 net@9 ADCD_Hipperdinger__inv
+Xinv@4 gnd vdd net@9 C1 ADCD_Hipperdinger__inv
+Xinv@5 gnd vdd net@15 net@12 ADCD_Hipperdinger__inv
+Xinv@6 gnd vdd net@12 C2 ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'CLK_noSolp{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 120MS 10MS 10MS 100MS 500MS
+#.TRAN 1MS 1200MS
+.ENDS ADCD_Hipperdinger__CLK_noSolp
+
+*** SUBCIRCUIT ADCD_Hipperdinger__CompPaso FROM CELL CompPaso{sch}
+.SUBCKT ADCD_Hipperdinger__CompPaso gnd vdd Ven VenN Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@2 Vin Ven Vout gnd NMOS L=0.6U W=1.8U
+Mpmos-4@2 Vout VenN Vin vdd PMOS L=0.6U W=3U
+.ENDS ADCD_Hipperdinger__CompPaso
+
+*** SUBCIRCUIT ADCD_Hipperdinger__OR_NOTANOTB FROM CELL OR_NOTANOTB{sch}
+.SUBCKT ADCD_Hipperdinger__OR_NOTANOTB gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+XNOR@0 gnd net@2 net@0 vdd net@4 ADCD_Hipperdinger__NOR
+Xinv@0 gnd vdd net@4 Vout ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd Va net@2 ADCD_Hipperdinger__inv
+Xinv@2 gnd vdd Vb net@0 ADCD_Hipperdinger__inv
+.ENDS ADCD_Hipperdinger__OR_NOTANOTB
+
+*** SUBCIRCUIT ADCD_Hipperdinger__FFD_clrn FROM CELL FFD_clrn{sch}
+.SUBCKT ADCD_Hipperdinger__FFD_clrn CLK CLRn D gnd PREn Q Qn vdd
+** GLOBAL gnd
+** GLOBAL vdd
+XCLK_noSo@0 net@280 net@257 gnd vdd CLK ADCD_Hipperdinger__CLK_noSolp
+XCompPaso@4 gnd vdd net@257 net@280 net@192 net@208 ADCD_Hipperdinger__CompPaso
+XCompPaso@5 gnd vdd net@280 net@257 net@208 net@180 ADCD_Hipperdinger__CompPaso
+XCompPaso@6 gnd vdd net@280 net@257 D net@198 ADCD_Hipperdinger__CompPaso
+XCompPaso@7 gnd vdd net@257 net@280 net@195 net@198 ADCD_Hipperdinger__CompPaso
+XNAND@0 gnd net@198 CLRn vdd net@192 ADCD_Hipperdinger__NAND
+XNAND@1 gnd net@183 CLRn vdd net@180 ADCD_Hipperdinger__NAND
+XOR_NOTAN@0 gnd PREn net@208 vdd net@183 ADCD_Hipperdinger__OR_NOTANOTB
+XOR_NOTAN@1 gnd PREn net@192 vdd net@195 ADCD_Hipperdinger__OR_NOTANOTB
+Xinv@8 gnd vdd net@180 net@174 ADCD_Hipperdinger__inv
+Xinv@9 gnd vdd net@174 Qn ADCD_Hipperdinger__inv
+Xinv@14 gnd vdd net@183 net@329 ADCD_Hipperdinger__inv
+Xinv@15 gnd vdd net@329 Q ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'FFD_clrn{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin D 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 1500MS
+#Vclk CLK 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 100MS 500MS
+#Vclr CLRn 0 PULSE 'SUPPLY' 0 170MS 10MS 10MS 20MS 500MS
+#Vpre PREn 0 PULSE 'SUPPLY' 0 570MS 10MS 10MS 20MS 500MS
+#.TRAN 1MS 1200MS
+.ENDS ADCD_Hipperdinger__FFD_clrn
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: add_detect_module{sch}
+X_14b_EQUA@0 b0 b1 b2 b3 b4 b5 b6 a0 a1 a2 a3 a4 a5 a6 gnd vdd net@224 ADCD_Hipperdinger__14b_EQUAL
+XAND@0 Add_match net@145 ACK ADCD_Hipperdinger__AND
+XFFD_clrn@0 trigg rst_n net@224 gnd vdd Add_match FFD_clrn@0_Qn vdd ADCD_Hipperdinger__FFD_clrn
+XFFD_clrn@2 trigg rst_n b7 gnd vdd R_W FFD_clrn@2_Qn vdd ADCD_Hipperdinger__FFD_clrn
+XFFD_clrn@3 CLK rst_n trigg gnd vdd net@236 FFD_clrn@3_Qn vdd ADCD_Hipperdinger__FFD_clrn
+XXOR@0 gnd trigg net@236 vdd net@145 ADCD_Hipperdinger__XOR
+
+* Spice Code nodes in cell cell 'add_detect_module{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vclk CLK 0 PULSE 0 'SUPPLY' 0MS 10uS 10uS 10MS 20MS
+#Vrstn rst_n 0 PULSE 'SUPPLY' 0 0MS 10uS 10uS 10MS 2000MS
+#Vtrig trigg 0 PULSE 0 'SUPPLY' 205MS 1MS 1MS 20MS 500MS
+#Vb7 b7 0 PULSE 0 'SUPPLY' 0MS 1MS 1MS 20MS 700MS
+#Va0  a0 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Va1  a1 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 350MS
+#Va2  a2 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Va3  a3 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Va4  a4 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Va5  a5 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Va6  a6 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 350MS
+#Vb0  b0 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 350MS
+#Vb1  b1 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Vb2  b2 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Vb3  b3 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Vb4  b4 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Vb5  b5 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#Vb6  b6 0 PULSE 0 'SUPPLY' 0MS 1uS 1uS 20MS 700MS
+#.TRAN 1MS 1200MS
+.END

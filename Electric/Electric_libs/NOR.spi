@@ -1,0 +1,25 @@
+*** SPICE deck for cell NOR{sch} from library ADCD_Hipperdinger
+*** Created on jue may. 02, 2024 15:02:58
+*** Last revised on mié may. 22, 2024 20:26:22
+*** Written on mié may. 22, 2024 20:34:33 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOR{sch}
+Mnmos-4@1 Vout Va gnd gnd NMOS L=0.6U W=1.8U
+Mnmos-4@2 Vout Vb gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Va net@62 vdd PMOS L=0.6U W=3U
+Mpmos-4@2 net@62 Vb Vout pmos-4@2_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NOR{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.END

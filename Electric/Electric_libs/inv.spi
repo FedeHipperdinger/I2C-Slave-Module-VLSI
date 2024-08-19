@@ -1,0 +1,22 @@
+*** SPICE deck for cell inv{sch} from library ADCD_Hipperdinger
+*** Created on lun abr. 29, 2013 16:31:03
+*** Last revised on mié may. 22, 2024 17:03:10
+*** Written on mié may. 22, 2024 17:03:12 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: inv{sch}
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+.TRAN 1MS 600MS
+.END

@@ -1,0 +1,41 @@
+*** SPICE deck for cell set_reset{sch} from library ADCD_Hipperdinger
+*** Created on mar jun. 25, 2024 20:38:33
+*** Last revised on mar jun. 25, 2024 20:42:16
+*** Written on mar jun. 25, 2024 20:42:28 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NOR FROM CELL NOR{sch}
+.SUBCKT ADCD_Hipperdinger__NOR gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@1 Vout Va gnd gnd NMOS L=0.6U W=1.8U
+Mnmos-4@2 Vout Vb gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Va net@62 vdd PMOS L=0.6U W=3U
+Mpmos-4@2 net@62 Vb Vout pmos-4@2_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NOR{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NOR
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: set_reset{sch}
+XNOR@0 gnd R Qn vdd Q ADCD_Hipperdinger__NOR
+XNOR@1 gnd Q S vdd Qn ADCD_Hipperdinger__NOR
+
+* Spice Code nodes in cell cell 'set_reset{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Vs S 0 PULSE 0 'SUPPLY' 50MS 10MS 10MS 10MS 500MS
+Vr R 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 10MS 1000MS
+.TRAN 1MS 1200MS
+.END

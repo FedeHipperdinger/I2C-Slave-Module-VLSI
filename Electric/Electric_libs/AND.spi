@@ -1,0 +1,48 @@
+*** SPICE deck for cell AND{sch} from library ADCD_Hipperdinger
+*** Created on lun jul. 01, 2024 14:24:08
+*** Last revised on mar jul. 02, 2024 08:39:16
+*** Written on vie jul. 19, 2024 03:40:21 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NAND FROM CELL NAND{sch}
+.SUBCKT ADCD_Hipperdinger__NAND gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vb net@0 net@0 NMOS L=0.6U W=1.8U
+Mnmos-4@1 net@0 Va gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vb Vout vdd PMOS L=0.6U W=3U
+Mpmos-4@1 vdd Va Vout pmos-4@1_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NAND{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NAND
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: AND{sch}
+XNAND@0 gnd Va Vb vdd net@0 ADCD_Hipperdinger__NAND
+Xinv@0 gnd vdd net@0 Vout ADCD_Hipperdinger__inv
+.END

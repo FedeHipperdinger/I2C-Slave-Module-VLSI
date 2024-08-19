@@ -1,0 +1,25 @@
+*** SPICE deck for cell NAND{sch} from library ADCD_Hipperdinger
+*** Created on vie jun. 21, 2024 12:23:47
+*** Last revised on vie jun. 21, 2024 12:34:53
+*** Written on vie jun. 21, 2024 12:35:16 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NAND{sch}
+Mnmos-4@0 Vout Vb net@0 net@0 NMOS L=0.6U W=1.8U
+Mnmos-4@1 net@0 Va gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vb Vout vdd PMOS L=0.6U W=3U
+Mpmos-4@1 vdd Va Vout pmos-4@1_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NAND{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+.TRAN 1MS 600MS
+.END

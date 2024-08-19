@@ -1,0 +1,65 @@
+*** SPICE deck for cell Signal_bfr_CLK{sch} from library ADCD_Hipperdinger
+*** Created on mar jun. 25, 2024 17:29:36
+*** Last revised on mar jun. 25, 2024 17:49:42
+*** Written on mar jun. 25, 2024 17:49:46 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NOR FROM CELL NOR{sch}
+.SUBCKT ADCD_Hipperdinger__NOR gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@1 Vout Va gnd gnd NMOS L=0.6U W=1.8U
+Mnmos-4@2 Vout Vb gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Va net@62 vdd PMOS L=0.6U W=3U
+Mpmos-4@2 net@62 Vb Vout pmos-4@2_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NOR{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NOR
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Signal_bfr_CLK{sch}
+XNOR@0 gnd net@5 net@19 vdd net@17 ADCD_Hipperdinger__NOR
+XNOR@1 gnd net@22 net@7 vdd net@15 ADCD_Hipperdinger__NOR
+Xinv@0 gnd vdd Vin net@2 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@2 net@5 ADCD_Hipperdinger__inv
+Xinv@2 gnd vdd Vin net@7 ADCD_Hipperdinger__inv
+Xinv@3 gnd vdd net@17 net@9 ADCD_Hipperdinger__inv
+Xinv@4 gnd vdd net@9 net@22 ADCD_Hipperdinger__inv
+Xinv@5 gnd vdd net@15 net@12 ADCD_Hipperdinger__inv
+Xinv@6 gnd vdd net@12 net@19 ADCD_Hipperdinger__inv
+Xinv@7 gnd vdd net@22 net@60 ADCD_Hipperdinger__inv
+Xinv@8 gnd vdd net@60 C ADCD_Hipperdinger__inv
+Xinv@9 gnd vdd net@19 Vout ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'Signal_bfr_CLK{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Vin Vin 0 PULSE 0 'SUPPLY' 120MS 10MS 10MS 100MS 500MS
+.TRAN 1MS 1200MS
+.END

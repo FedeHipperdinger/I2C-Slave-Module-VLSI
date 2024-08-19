@@ -1,0 +1,43 @@
+*** SPICE deck for cell Delayer{sch} from library ADCD_Hipperdinger
+*** Created on mar jun. 25, 2024 17:52:40
+*** Last revised on mar jun. 25, 2024 18:07:30
+*** Written on mar jun. 25, 2024 18:07:38 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Delayer{sch}
+Xinv@0 gnd vdd Vin net@0 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@0 net@6 ADCD_Hipperdinger__inv
+Xinv@2 gnd vdd net@6 net@3 ADCD_Hipperdinger__inv
+Xinv@3 gnd vdd net@3 net@18 ADCD_Hipperdinger__inv
+Xinv@4 gnd vdd net@18 net@9 ADCD_Hipperdinger__inv
+Xinv@5 gnd vdd net@9 net@15 ADCD_Hipperdinger__inv
+Xinv@6 gnd vdd net@15 net@12 ADCD_Hipperdinger__inv
+Xinv@7 gnd vdd net@12 Vout ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'Delayer{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Vin Vin 0 PULSE 0 'SUPPLY' 120MS 10pS 10pS 100MS 500MS
+.TRAN 1MS 1200MS
+.END

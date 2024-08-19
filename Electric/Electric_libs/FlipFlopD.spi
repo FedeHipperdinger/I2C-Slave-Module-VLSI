@@ -1,0 +1,57 @@
+*** SPICE deck for cell FlipFlopD{sch} from library ADCD_Hipperdinger
+*** Created on vie jun. 21, 2024 11:50:22
+*** Last revised on vie jun. 21, 2024 15:31:40
+*** Written on vie jun. 21, 2024 15:44:51 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__CompPaso FROM CELL CompPaso{sch}
+.SUBCKT ADCD_Hipperdinger__CompPaso gnd vdd Ven VenN Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@2 Vin Ven Vout gnd NMOS L=0.6U W=1.8U
+Mpmos-4@2 Vout VenN Vin vdd PMOS L=0.6U W=3U
+.ENDS ADCD_Hipperdinger__CompPaso
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: FlipFlopD{sch}
+XCompPaso@0 gnd vdd net@81 net@46 net@11 net@2 ADCD_Hipperdinger__CompPaso
+XCompPaso@1 gnd vdd net@46 net@81 net@0 net@2 ADCD_Hipperdinger__CompPaso
+XCompPaso@2 gnd vdd net@46 net@81 net@77 net@57 ADCD_Hipperdinger__CompPaso
+XCompPaso@3 gnd vdd net@81 net@46 net@54 net@57 ADCD_Hipperdinger__CompPaso
+Xinv@0 gnd vdd Vin net@11 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@2 net@7 ADCD_Hipperdinger__inv
+Xinv@2 gnd vdd net@7 net@0 ADCD_Hipperdinger__inv
+Xinv@3 gnd vdd net@7 net@77 ADCD_Hipperdinger__inv
+Xinv@4 gnd vdd net@57 Vout ADCD_Hipperdinger__inv
+Xinv@5 gnd vdd Vout net@54 ADCD_Hipperdinger__inv
+Xinv@6 gnd vdd net@81 net@46 ADCD_Hipperdinger__inv
+Xinv@7 gnd vdd CLK net@81 ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'FlipFlopD{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 1500MS
+Vclk CLK 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 100MS 500MS
+.TRAN 1MS 1200MS
+.END
+.END

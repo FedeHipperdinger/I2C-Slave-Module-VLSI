@@ -1,0 +1,9 @@
+Circuit: *** SPICE deck for cell add_detect_module{sch} from library ADCD_Hipperdinger
+
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Fatal Error: No analysis request found.

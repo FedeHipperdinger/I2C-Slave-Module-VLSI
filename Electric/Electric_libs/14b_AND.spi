@@ -1,0 +1,102 @@
+*** SPICE deck for cell 14b_AND{sch} from library ADCD_Hipperdinger
+*** Created on lun jul. 01, 2024 11:31:27
+*** Last revised on mar jul. 02, 2024 14:22:50
+*** Written on mar jul. 02, 2024 14:22:54 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NAND FROM CELL NAND{sch}
+.SUBCKT ADCD_Hipperdinger__NAND gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vb net@0 net@0 NMOS L=0.6U W=1.8U
+Mnmos-4@1 net@0 Va gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vb Vout vdd PMOS L=0.6U W=3U
+Mpmos-4@1 vdd Va Vout pmos-4@1_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NAND{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NAND
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NOR FROM CELL NOR{sch}
+.SUBCKT ADCD_Hipperdinger__NOR gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@1 Vout Va gnd gnd NMOS L=0.6U W=1.8U
+Mnmos-4@2 Vout Vb gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Va net@62 vdd PMOS L=0.6U W=3U
+Mpmos-4@2 net@62 Vb Vout pmos-4@2_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NOR{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NOR
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+*** SUBCIRCUIT ADCD_Hipperdinger__6b_NAND FROM CELL 6b_NAND{sch}
+.SUBCKT ADCD_Hipperdinger__6b_NAND a0 a1 a2 b0 b1 b2 gnd vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND@0 gnd a0 b0 vdd net@26 ADCD_Hipperdinger__NAND
+XNAND@1 gnd a1 b1 vdd net@28 ADCD_Hipperdinger__NAND
+XNAND@2 gnd a2 b2 vdd net@38 ADCD_Hipperdinger__NAND
+XNAND@3 gnd net@30 net@32 vdd net@34 ADCD_Hipperdinger__NAND
+XNOR@0 gnd net@34 net@38 vdd Vout ADCD_Hipperdinger__NOR
+Xinv@0 gnd vdd net@26 net@30 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@28 net@32 ADCD_Hipperdinger__inv
+.ENDS ADCD_Hipperdinger__6b_NAND
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 14b_AND{sch}
+X_6b_NAND@0 a0 a1 a2 b0 b1 b2 gnd vdd net@14 ADCD_Hipperdinger__6b_NAND
+X_6b_NAND@1 a3 a4 a5 b3 b4 b5 gnd vdd net@16 ADCD_Hipperdinger__6b_NAND
+XNAND@3 gnd a6 b6 vdd net@18 ADCD_Hipperdinger__NAND
+XNAND@4 gnd net@14 net@16 vdd net@10 ADCD_Hipperdinger__NAND
+XNOR@0 gnd net@10 net@18 vdd Vout ADCD_Hipperdinger__NOR
+
+* Spice Code nodes in cell cell '14b_AND{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Va0  a0 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Va1  a1 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 350MS
+Va2  a2 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Va3  a3 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Va4  a4 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Va5  a5 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Va6  a6 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 350MS
+Vb0  b0 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 350MS
+Vb1  b1 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Vb2  b2 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Vb3  b3 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Vb4  b4 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Vb5  b5 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+Vb6  b6 0 PULSE 0 'SUPPLY' 20MS 1uS 1uS 20MS 700MS
+.TRAN 1MS 1200MS
+.END

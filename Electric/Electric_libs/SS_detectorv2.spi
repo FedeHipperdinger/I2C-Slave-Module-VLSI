@@ -1,0 +1,90 @@
+*** SPICE deck for cell SS_detectorv2{sch} from library ADCD_Hipperdinger
+*** Created on vie jun. 21, 2024 20:35:31
+*** Last revised on vie jun. 21, 2024 22:51:48
+*** Written on mar jun. 25, 2024 16:35:58 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\feder\Desktop\UNS\5to_anio\2do_cuatrimestre\ADCD\Electric\Electric_libs\Modelos_Transistores.txt
+
+*** SUBCIRCUIT ADCD_Hipperdinger__NAND FROM CELL NAND{sch}
+.SUBCKT ADCD_Hipperdinger__NAND gnd Va Vb vdd Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vb net@0 net@0 NMOS L=0.6U W=1.8U
+Mnmos-4@1 net@0 Va gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vb Vout vdd PMOS L=0.6U W=3U
+Mpmos-4@1 vdd Va Vout pmos-4@1_b PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'NAND{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Va Va 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#Vb Vb 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__NAND
+
+*** SUBCIRCUIT ADCD_Hipperdinger__inv FROM CELL inv{sch}
+.SUBCKT ADCD_Hipperdinger__inv gnd vdd Vin Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 Vout Vin gnd gnd NMOS L=0.6U W=1.8U
+Mpmos-4@0 vdd Vin Vout vdd PMOS L=0.6U W=3U
+
+* Spice Code nodes in cell cell 'inv{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin Vin 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 500MS
+#.TRAN 1MS 600MS
+.ENDS ADCD_Hipperdinger__inv
+
+*** SUBCIRCUIT ADCD_Hipperdinger__FFD_Clrn FROM CELL FFD_Clrn{sch}
+.SUBCKT ADCD_Hipperdinger__FFD_Clrn CLK D gnd Q Qn rst_n vdd
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND@0 gnd rst_n CLK vdd net@104 ADCD_Hipperdinger__NAND
+XNAND@1 gnd net@13 D vdd net@8 ADCD_Hipperdinger__NAND
+XNAND@2 gnd net@8 net@16 vdd net@0 ADCD_Hipperdinger__NAND
+XNAND@3 gnd rst_n net@0 vdd net@1 ADCD_Hipperdinger__NAND
+XNAND@4 gnd net@104 net@3 vdd net@16 ADCD_Hipperdinger__NAND
+XNAND@5 gnd net@1 net@104 vdd net@13 ADCD_Hipperdinger__NAND
+XNAND@6 gnd net@13 Q vdd Qn ADCD_Hipperdinger__NAND
+XNAND@7 gnd Qn net@16 vdd Q ADCD_Hipperdinger__NAND
+Xinv@0 gnd vdd net@1 net@3 ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'FFD_Clrn{sch}'
+#.INCLUDE Modelos_Transistores.txt
+#.PARAM SUPPLY=5v
+#VDD VDD 0 DC 'SUPPLY'
+#Vin D 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 200MS 1500MS
+#Vclk CLK 0 PULSE 0 'SUPPLY' 150MS 10MS 10MS 100MS 500MS
+#Vrst rst_n 0 PULSE 'SUPPLY' 0 170MS 10MS 10MS 20MS 500MS
+#.TRAN 1MS 1200MS
+#.END
+.ENDS ADCD_Hipperdinger__FFD_Clrn
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: SS_detectorv2{sch}
+Mnmos-4@0 SDA SDA_WRITE gnd nmos-4@0_b NMOS L=0.6U W=1.8U
+Mnmos-4@1 SCL SCL_WRITE gnd nmos-4@1_b NMOS L=0.6U W=1.8U
+XFFD_Clrn@0 net@101 vdd gnd I2C_START FFD_Clrn@0_Qn FFD_Clrn@0_rst_n vdd ADCD_Hipperdinger__FFD_Clrn
+XFFD_Clrn@1 net@133 vdd gnd I2C_STOP FFD_Clrn@1_Qn SCL_READ vdd ADCD_Hipperdinger__FFD_Clrn
+XNAND@0 gnd net@99 SDA vdd net@101 ADCD_Hipperdinger__NAND
+XNAND@1 gnd SDA net@0 vdd net@133 ADCD_Hipperdinger__NAND
+Xinv@0 gnd vdd SDA_READ net@99 ADCD_Hipperdinger__inv
+Xinv@1 gnd vdd net@0 SDA_READ ADCD_Hipperdinger__inv
+Xinv@2 gnd vdd SDA net@0 ADCD_Hipperdinger__inv
+Xinv@3 gnd vdd SCL net@88 ADCD_Hipperdinger__inv
+Xinv@4 gnd vdd net@88 SCL_READ ADCD_Hipperdinger__inv
+
+* Spice Code nodes in cell cell 'SS_detectorv2{sch}'
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5v
+VDD VDD 0 DC 'SUPPLY'
+Vsda SDA 0 PULSE 0 'SUPPLY' 120MS 10MS 10MS 100MS 500MS
+Vscl SCL 0 PULSE 0 'SUPPLY' 100MS 10MS 10MS 100MS 500MS
+.TRAN 1MS 1200MS
+.END

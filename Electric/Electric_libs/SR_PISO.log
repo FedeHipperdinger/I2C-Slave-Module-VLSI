@@ -1,0 +1,301 @@
+Circuit: *** SPICE deck for cell SR_PISO{sch} from library ADCD_Hipperdinger
+
+Warning: Multiple definitions of model "pmost81" Type: BSIM3
+Warning: Multiple definitions of model "pmost51" Type: BSIM3
+Warning: Multiple definitions of model "pmost42" Type: BSIM3
+Warning: Multiple definitions of model "pmost39" Type: BSIM3
+Warning: Multiple definitions of model "pmost36" Type: BSIM3
+Warning: Multiple definitions of model "nmost81" Type: BSIM3
+Warning: Multiple definitions of model "nmost51" Type: BSIM3
+Warning: Multiple definitions of model "nmost42" Type: BSIM3
+Warning: Multiple definitions of model "nmost39" Type: BSIM3
+Warning: Multiple definitions of model "nmost36" Type: BSIM3
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+WARNING: Node FFD_CLRN@0:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@0:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@0:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@0:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@0:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@0:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@1:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@1:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@1:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@1:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@1:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@1:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@2:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@2:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@2:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@2:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@2:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@2:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@3:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@3:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@3:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@3:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@3:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@3:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@4:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@4:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@4:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@4:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@4:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@4:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@5:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@5:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@5:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@5:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@5:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@5:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@6:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@6:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@6:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@6:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@6:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@6:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@7:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@7:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@7:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@7:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@7:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@7:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@8:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@8:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@8:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@8:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@8:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@8:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@9:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@9:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@9:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@9:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@9:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@9:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@10:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@10:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@10:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@10:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@10:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@10:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@11:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@11:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@11:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@11:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@11:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@11:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@12:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@12:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@12:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@12:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@12:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@12:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@13:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@13:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@13:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@13:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@13:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@13:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@14:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@14:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@14:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@14:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@14:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@14:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@15:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@15:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@15:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@15:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@15:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@15:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@16:CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@16:CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@16:NAND@0:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@16:NAND@1:PMOS-4@1_B is floating.
+WARNING: Node FFD_CLRN@16:OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node FFD_CLRN@16:OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node NAND@0:PMOS-4@1_B is floating.
+WARNING: Node NAND@1:PMOS-4@1_B is floating.
+WARNING: Node NAND@2:PMOS-4@1_B is floating.
+WARNING: Node NAND@3:PMOS-4@1_B is floating.
+WARNING: Node NAND@4:PMOS-4@1_B is floating.
+WARNING: Node NAND@5:PMOS-4@1_B is floating.
+WARNING: Node NAND@6:PMOS-4@1_B is floating.
+WARNING: Node NAND@7:PMOS-4@1_B is floating.
+WARNING: Node NAND@8:PMOS-4@1_B is floating.
+WARNING: Node NAND@9:PMOS-4@1_B is floating.
+WARNING: Node NAND@10:PMOS-4@1_B is floating.
+WARNING: Node NAND@11:PMOS-4@1_B is floating.
+WARNING: Node NAND@12:PMOS-4@1_B is floating.
+WARNING: Node NAND@13:PMOS-4@1_B is floating.
+WARNING: Node NAND@14:PMOS-4@1_B is floating.
+WARNING: Node NAND@15:PMOS-4@1_B is floating.
+WARNING: Node NAND@16:PMOS-4@1_B is floating.
+
+WARNING: Less than two connections to node FFD_CLRN@0:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@0:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@0:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@0:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@0:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@0:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@0:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@0:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@0:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@0:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@0:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@0:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@1:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@1:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@1:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@1:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@1:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@1:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@1:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@1:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@1:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@1:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@1:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@1:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@2:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@2:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@2:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@2:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@2:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@2:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@2:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@2:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@2:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@2:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@2:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@2:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@3:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@3:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@3:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@3:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@3:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@3:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@3:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@3:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@3:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@3:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@3:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@3:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@4:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@4:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@4:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@4:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@4:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@4:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@4:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@4:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@4:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@4:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@4:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@4:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@5:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@5:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@5:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@5:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@5:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@5:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@5:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@5:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@5:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@5:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@5:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@5:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@6:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@6:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@6:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@6:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@6:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@6:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@6:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@6:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@6:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@6:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@6:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@6:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@7:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@7:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@7:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@7:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@7:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@7:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@7:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@7:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@7:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@7:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@7:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@7:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@8:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@8:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@8:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@8:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@8:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@8:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@8:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@8:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@8:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@8:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@8:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@8:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@9:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@9:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@9:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@9:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@9:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@9:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@9:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@9:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@9:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@9:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@9:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@9:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@10:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@10:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@10:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@10:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@10:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@10:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@10:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@10:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@10:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@10:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@10:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@10:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@11:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@11:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@11:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@11:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@11:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@11:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@11:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@11:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@11:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@11:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@11:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@11:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@12:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@12:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@12:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@12:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@12:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@12:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@12:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@12:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@12:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@12:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@12:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@12:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@13:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@13:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@13:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@13:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@13:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@13:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@13:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@13:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@13:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@13:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@13:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@13:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@14:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@14:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@14:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@14:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@14:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@14:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@14:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@14:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@14:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@14:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@14:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@14:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@15:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@15:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@15:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@15:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@15:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@15:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@15:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@15:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@15:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@15:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@15:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@15:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@16:CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@16:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@16:CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:FFD_CLRN@16:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@16:NAND@0:PMOS-4@1_B.  This node is used by M:FFD_CLRN@16:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@16:NAND@1:PMOS-4@1_B.  This node is used by M:FFD_CLRN@16:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node FFD_CLRN@16:OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@16:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node FFD_CLRN@16:OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:FFD_CLRN@16:OR_NOTAN@1:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node NAND@0:PMOS-4@1_B.  This node is used by M:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node NAND@1:PMOS-4@1_B.  This node is used by M:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node NAND@2:PMOS-4@1_B.  This node is used by M:NAND@2:PMOS-4@1.
+WARNING: Less than two connections to node NAND@3:PMOS-4@1_B.  This node is used by M:NAND@3:PMOS-4@1.
+WARNING: Less than two connections to node NAND@4:PMOS-4@1_B.  This node is used by M:NAND@4:PMOS-4@1.
+WARNING: Less than two connections to node NAND@5:PMOS-4@1_B.  This node is used by M:NAND@5:PMOS-4@1.
+WARNING: Less than two connections to node NAND@6:PMOS-4@1_B.  This node is used by M:NAND@6:PMOS-4@1.
+WARNING: Less than two connections to node NAND@7:PMOS-4@1_B.  This node is used by M:NAND@7:PMOS-4@1.
+WARNING: Less than two connections to node NAND@8:PMOS-4@1_B.  This node is used by M:NAND@8:PMOS-4@1.
+WARNING: Less than two connections to node NAND@9:PMOS-4@1_B.  This node is used by M:NAND@9:PMOS-4@1.
+WARNING: Less than two connections to node NAND@10:PMOS-4@1_B.  This node is used by M:NAND@10:PMOS-4@1.
+WARNING: Less than two connections to node NAND@11:PMOS-4@1_B.  This node is used by M:NAND@11:PMOS-4@1.
+WARNING: Less than two connections to node NAND@12:PMOS-4@1_B.  This node is used by M:NAND@12:PMOS-4@1.
+WARNING: Less than two connections to node NAND@13:PMOS-4@1_B.  This node is used by M:NAND@13:PMOS-4@1.
+WARNING: Less than two connections to node NAND@14:PMOS-4@1_B.  This node is used by M:NAND@14:PMOS-4@1.
+WARNING: Less than two connections to node NAND@15:PMOS-4@1_B.  This node is used by M:NAND@15:PMOS-4@1.
+WARNING: Less than two connections to node NAND@16:PMOS-4@1_B.  This node is used by M:NAND@16:PMOS-4@1.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Tue Jul 02 08:53:35 2024
+Total elapsed time: 81.831 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 108484
+traniter = 107979
+tranpoints = 31893
+accept = 23724
+rejected = 8169
+matrix size = 703
+fillins = 888
+solver = Normal
+Thread vector: 1732.2/299.6[12] 316.2/123.5[12] 92.6/74.2[4] 14.3/20.9[1]  2592/500
+Matrix Compiler1: 158.56 KB object code size  101.9/50.1/[21.7]
+Matrix Compiler2: 108.14 KB object code size  51.0/38.7/[27.4]
+

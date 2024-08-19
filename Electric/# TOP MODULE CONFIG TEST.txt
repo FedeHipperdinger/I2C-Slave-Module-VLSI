@@ -1,0 +1,73 @@
+# TOP MODULE WRITE MODE TEST (USER READ MODE)
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5
+.PARAM maxStep=10uS
+.PARAM T=20uS
+.PARAM Ton=10uS
+.PARAM Tr=1nS
+
+VDD VDD 0 DC 'SUPPLY'
+Vrst rst 0 PULSE 0 'SUPPLY' {0*'Ton'} 'Tr' 'Tr' 'Ton' {200*'Ton'}
+
+Vscl SCL_i 0 PULSE 0 'SUPPLY' {0.5*'Ton'} 'Tr' 'Tr' 'Ton' 'T'
+
+Vstart SDA_start_stop_i 0 PULSE 'SUPPLY' 0 {9*'Ton'} 'Tr' 'Tr' {70*'Ton'} {80*'Ton'}
+Vsda_add SDA_add_i 0 PULSE 0 'SUPPLY' {14*'Ton'} 'Tr' 'Tr' {2*'T'} {4*'T'} 4
+Vsda_data SDA_data_i 0 PULSE 0 'SUPPLY' {40*'Ton'} 'Tr' 'Tr' {2*'T'} {4*'T'} 3
+
+Va0 a0 0 DC 'SUPPLY'
+Va1 a1 0 DC 'SUPPLY'
+Va2 a2 0 DC 0
+Va3 a3 0 DC 0
+Va4 a4 0 DC 'SUPPLY'
+Va5 a5 0 DC 'SUPPLY'
+Va6 a6 0 DC 0
+
+Vb0_i b0_i 0 DC 'SUPPLY'
+Vb1_i b1_i 0 DC 'SUPPLY'
+Vb2_i b2_i 0 DC 0
+Vb3_i b3_i 0 DC 'SUPPLY'
+Vb4_i b4_i 0 DC 0
+Vb5_i b5_i 0 DC 'SUPPLY'
+Vb6_i b6_i 0 DC 0
+Vb7_i b7_i 0 DC 'SUPPLY'
+
+.TRAN 'maxStep' {100*'Ton'}
+
+
+
+# TOP MODULE READ MODE TEST (USER WRITE MODE)
+.INCLUDE Modelos_Transistores.txt
+.PARAM SUPPLY=5
+.PARAM maxStep=10uS
+.PARAM T=20uS
+.PARAM Ton=10uS
+.PARAM Tr=1nS
+
+VDD VDD 0 DC 'SUPPLY'
+Vrst 		rst 				0 PULSE 0 			'SUPPLY' 	{0*'Ton'} 	'Tr' 'Tr' 'Ton' 		{200*'Ton'}
+
+Vscl 		SCL_i 				0 PULSE 0 			'SUPPLY' 	{0.5*'Ton'} 'Tr' 'Tr' 'Ton' 		'T'
+
+Vstart 		SDA_start_stop_i 	0 PULSE 'SUPPLY' 	0 			{9*'Ton'} 	'Tr' 'Tr' {72*'Ton'} 	{100*'Ton'}
+Vsda_add 	SDA_add_i 			0 PULSE 0 			'SUPPLY' 	{10*'Ton'} 	'Tr' 'Tr' {2*'T'} 		{4*'T'} 		2
+Vsda_ack 	SDA_data_i 			0 PULSE 0 			'SUPPLY' 	{44*'Ton'} 	'Tr' 'Tr' 'T' 			{9*'T'}			2
+
+Va0 a0 0 DC 0
+Va1 a1 0 DC 0
+Va2 a2 0 DC 'SUPPLY'
+Va3 a3 0 DC 'SUPPLY'
+Va4 a4 0 DC 0
+Va5 a5 0 DC 0
+Va6 a6 0 DC 'SUPPLY'
+
+Vb0_i b0_i 0 PULSE 0 'SUPPLY' 0us			'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb1_i b1_i 0 PULSE 0 'SUPPLY' 0us			'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb2_i b2_i 0 PULSE 0 'SUPPLY' {50*'Ton'}	'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb3_i b3_i 0 PULSE 0 'SUPPLY' 0us			'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb4_i b4_i 0 PULSE 0 'SUPPLY' {50*'Ton'}	'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb5_i b5_i 0 PULSE 0 'SUPPLY' 0us			'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb6_i b6_i 0 PULSE 0 'SUPPLY' {50*'Ton'}	'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+Vb7_i b7_i 0 PULSE 0 'SUPPLY' 0us			'Tr' 'Tr'	{50*'Ton'}	{80*'Ton'}
+
+.TRAN 'maxStep' {100*'Ton'}

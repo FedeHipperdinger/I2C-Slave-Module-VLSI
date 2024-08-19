@@ -1,0 +1,55 @@
+Circuit: *** SPICE deck for cell FlipFlopD_clrn{sch} from library ADCD_Hipperdinger
+
+Warning: Multiple definitions of model "pmost81" Type: BSIM3
+Warning: Multiple definitions of model "pmost51" Type: BSIM3
+Warning: Multiple definitions of model "pmost42" Type: BSIM3
+Warning: Multiple definitions of model "pmost39" Type: BSIM3
+Warning: Multiple definitions of model "pmost36" Type: BSIM3
+Warning: Multiple definitions of model "nmost81" Type: BSIM3
+Warning: Multiple definitions of model "nmost51" Type: BSIM3
+Warning: Multiple definitions of model "nmost42" Type: BSIM3
+Warning: Multiple definitions of model "nmost39" Type: BSIM3
+Warning: Multiple definitions of model "nmost36" Type: BSIM3
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+WARNING: Node CLK_NOSO@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node CLK_NOSO@0:NOR@1:PMOS-4@2_B is floating.
+WARNING: Node NAND@0:PMOS-4@1_B is floating.
+WARNING: Node NAND@1:PMOS-4@1_B is floating.
+WARNING: Node OR_NOTAN@0:NOR@0:PMOS-4@2_B is floating.
+WARNING: Node OR_NOTAN@1:NOR@0:PMOS-4@2_B is floating.
+
+WARNING: Less than two connections to node CLK_NOSO@0:NOR@0:PMOS-4@2_B.  This node is used by M:CLK_NOSO@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node CLK_NOSO@0:NOR@1:PMOS-4@2_B.  This node is used by M:CLK_NOSO@0:NOR@1:PMOS-4@2.
+WARNING: Less than two connections to node NAND@0:PMOS-4@1_B.  This node is used by M:NAND@0:PMOS-4@1.
+WARNING: Less than two connections to node NAND@1:PMOS-4@1_B.  This node is used by M:NAND@1:PMOS-4@1.
+WARNING: Less than two connections to node OR_NOTAN@0:NOR@0:PMOS-4@2_B.  This node is used by M:OR_NOTAN@0:NOR@0:PMOS-4@2.
+WARNING: Less than two connections to node OR_NOTAN@1:NOR@0:PMOS-4@2_B.  This node is used by M:OR_NOTAN@1:NOR@0:PMOS-4@2.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Jun 25 20:16:55 2024
+Total elapsed time: 0.329 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 10914
+traniter = 10874
+tranpoints = 3158
+accept = 2592
+rejected = 566
+matrix size = 47
+fillins = 68
+solver = Normal
+Thread vector: 27.8/20.2[6] 5.2/3.5[6] 2.3/1.7[6] 0.2/1.5[1]  2592/500
+Matrix Compiler1: 10.12 KB object code size  1.4/0.7/[0.5]
+Matrix Compiler2: 6.81 KB object code size  0.5/0.9/[0.3]
+
